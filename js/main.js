@@ -44,8 +44,19 @@ function openMilestone(milestoneElement,id) {
         shownPanel.classList.remove(".show");
 
     currentPanel.classList.toggle("show");
-
+    showMilestone(id);
 }
+function showMilestone(id) {
+    const milestoneImage = document.querySelector(".milestoneImage");
+    const name = document.querySelector(".title");
+    const details = document.querySelector(".details");
+
+   // milestoneImage.style.opacity = "0";
+    milestoneImage.src = milestonesData[id].image;
+    name.innerText = milestonesData[id].name;
+    details.innerText = milestonesData[id].description;
+}
+
 
 
 loadMilestones();

@@ -51,11 +51,18 @@ function showMilestone(id) {
     const name = document.querySelector(".title");
     const details = document.querySelector(".details");
 
-   // milestoneImage.style.opacity = "0";
+     milestoneImage.style.opacity = "0";
     milestoneImage.src = milestonesData[id].image;
     name.innerText = milestonesData[id].name;
     details.innerText = milestonesData[id].description;
 }
+
+// listen for hero image load
+const milestoneImage = document.querySelector(".milestoneImage");
+milestoneImage.onload = function () {
+    this.style.opacity = "1";
+};
+
 
 
 
